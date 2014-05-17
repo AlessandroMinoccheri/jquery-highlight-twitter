@@ -1,7 +1,7 @@
 /*
 Alessandro Minoccheri
-V 1.0.0
-15-02-2014
+V 0.1.0
+17-05-2014
 */
 
 (function ($) {
@@ -15,7 +15,7 @@ V 1.0.0
 			return this.each(function () {
                 var o = options;
 				var obj = $(this);
-				var textSend
+				var textSend = '';
 
 				getSelectedText = function(){
 		    		if (window.getSelection) {
@@ -27,9 +27,17 @@ V 1.0.0
 		    	}
 
 				obj.mouseup(function(e) {
-					if($(event.target).closest('#img-share-twitter').length){
-						console.log("http://twitter.com/share?text=" + textSend + "&url=" + window.location.href)
-						window.location.href = "http://twitter.com/share?text=" + textSend + "&url=" + window.location.href;
+					if(($(event.target).closest('#img-share-twitter').length) && (textSend != '')){
+						var textTotal = textSend + window.location.href;
+						if(textTotal.length > 140){
+							textCut = 140 - window.location.href.length;
+							textSend = textSend.substring(0, textCut);
+						}
+
+						window.open(
+						  "http://twitter.com/share?text=" + textSend + "&url=" + window.location.href,
+						  '_blank'
+						);
 					}
 					else{
 						var text = getSelectedText();
