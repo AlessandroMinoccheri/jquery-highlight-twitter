@@ -1,8 +1,8 @@
 jquery-highlight-twitter
 ========================
 
-This is jQuery plugin that allow to share highlighted text on twitter.
-When you highlight a text with this plugin active on it automatically appear twitter logo to share the highlighted text
+This jQuery plugin allow to share highlighted text on twitter.
+When you highlight a text with this plugin active on it automatically appear twitter logo to share the highlighted text.
 
 #Get started
 You can apply this plugin to all elements of your page. 
@@ -17,12 +17,12 @@ and with jQuery call the plugin on this element (inside $(document).ready() func
 $('#text-highlighted').highlightTwitter();
 ```  
 
-With this call every time you highlight the text inside the elemtn will appear the image of twitter and i you clickon it you can share your highlighted text.
+With this call every time you highlight the text inside the element, will appear the image of twitter and if user click on it you can share highlighted text.
 
-If the container of your element isn't in position:relative automatically the plugin wrap the element on a div with position:relative to position wel the image of twitter.
+If the container of your element isn't in position:relative automatically the plugin wrap the element on a div with position:relative to position well the image of twitter.
 
 #Customize
-You can customize the image of twitter adding a parameter called image like this:
+You can customize the image of twitter by adding a parameter called image like this:
 ```
 $('#txt').highlightTwitter({
 	image:"img/your-twitter-image.png"
