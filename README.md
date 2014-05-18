@@ -24,7 +24,7 @@ If the container of your element isn't in position:relative automatically the pl
 #Customize
 You can customize the image of twitter by adding a parameter called image like this:
 ```
-$('#txt').highlightTwitter({
+$('#text-highlighted').highlightTwitter({
 	image:"img/your-twitter-image.png"
 })
 ```
