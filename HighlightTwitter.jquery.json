@@ -1,0 +1,23 @@
+{
+    "name": "HighlightTwitter",
+    "title": "jQuery Highlight Twitter",
+    "description": "A jQuery plugin that allow to share highlighted text on twitter.",
+    "keywords": [
+        "highlight",
+        "twitter"
+    ],
+    "version": "0.1.0",
+    "author": {
+        "name": "Alessandro Minoccheri",
+        "url": "http://alessandrominoccheri.com"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/AlessandroMinoccheri/jquery-highlight-twitter/blob/master/LICENSE"
+        }
+    ],
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
+}
