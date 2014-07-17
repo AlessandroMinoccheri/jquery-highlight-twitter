@@ -27,7 +27,7 @@ V 0.1.0
 		    	}
 
 				obj.mouseup(function(e) {
-					if(($(event.target).closest('#img-share-twitter').length) && (textSend != '')){
+					if(($(event.target).closest('#img-share-twitter').length) && (textSend.toString() !== '')){
 						var textTotal = textSend + window.location.href;
 						if(textTotal.length > 140){
 							textCut = 140 - window.location.href.length;
