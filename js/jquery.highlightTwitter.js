@@ -5,26 +5,26 @@ V 0.1.0
 */
 
 (function ($) {
-    $.fn.extend({      
-        highlightTwitter: function (argumentOptions) {
-            var defaults = {
+	$.fn.extend({      
+		highlightTwitter: function (argumentOptions) {
+			var defaults = {
 				image: "img/twitter.png",
 			}
 			var options = $.extend(defaults, argumentOptions);
 			
 			return this.each(function () {
-                var o = options;
+				var o = options;
 				var obj = $(this);
 				var textSend = '';
 
 				getSelectedText = function(){
-		    		if (window.getSelection) {
-			            return window.getSelection().toString();
-			        } else if (document.selection) {
-			            return document.selection.createRange().text;
-			        }
-			        return '';
-		    	}
+					if (window.getSelection) {
+						return window.getSelection().toString();
+					} else if (document.selection) {
+						return document.selection.createRange().text;
+					}
+					return '';
+				}
 
 				obj.mouseup(function(e) {
 					if(($(event.target).closest('#img-share-twitter').length) && (textSend.toString() !== '')){
@@ -59,7 +59,7 @@ V 0.1.0
 									obj.append(img);
 								else
 									obj.wrap('<div style="position:relative;"></div>').append(img);
-							    
+								
 							}
 						}
 						else
@@ -68,11 +68,11 @@ V 0.1.0
 				});
 
 				$(document).click(function(event) { 
-				    if((!$(event.target).closest(obj).length) && (!$(event.target).closest('#img-share-twitter').length)){
-				        $(document).find('#img-share-twitter').remove();
-				    }        
+					if((!$(event.target).closest(obj).length) && (!$(event.target).closest('#img-share-twitter').length)){
+						$(document).find('#img-share-twitter').remove();
+					}        
 				});
-            });
-        }
-    });     
+			});
+		}
+	});     
 })(jQuery);
