@@ -1,33 +1,33 @@
 /*
 Alessandro Minoccheri
-V 0.1.0
+V 0.1.1
 17-05-2014
 */
 
 (function ($) {
-	$.fn.extend({      
-		highlightTwitter: function (argumentOptions) {
-			var defaults = {
+    $.fn.extend({      
+        highlightTwitter: function (argumentOptions) {
+            var defaults = {
 				image: "img/twitter.png",
 			}
 			var options = $.extend(defaults, argumentOptions);
 			
 			return this.each(function () {
-				var o = options;
+                var o = options;
 				var obj = $(this);
 				var textSend = '';
 
 				getSelectedText = function(){
-					if (window.getSelection) {
-						return window.getSelection().toString();
-					} else if (document.selection) {
-						return document.selection.createRange().text;
-					}
-					return '';
-				}
+		    		if (window.getSelection) {
+			            return window.getSelection().toString();
+			        } else if (document.selection) {
+			            return document.selection.createRange().text;
+			        }
+			        return '';
+		    	}
 
 				obj.mouseup(function(e) {
-					if(($(event.target).closest('#img-share-twitter').length) && (textSend.toString() !== '')){
+					if(($(event.target).closest('#img-share-twitter').length) && (textSend != '')){
 						var textTotal = textSend + window.location.href;
 						if(textTotal.length > 140){
 							textCut = 140 - window.location.href.length;
@@ -47,32 +47,27 @@ V 0.1.0
 								window.location.href = "http://twitter.com/share?text=" + text + "&url=" + window.location.href;
 							}
 							else{
+								$(document).find('#img-share-twitter').remove();
+
 								var offset = obj.offset();
 								mouseX = Math.min(e.pageX - offset.left - 30);
 								mouseY = Math.min(e.pageY - offset.top - 58);
 
-								$(document).find('#img-share-twitter').remove();
-
 								var img= '<img id="img-share-twitter" src="' + o.image + '" alt="share on twitter" title="Share on Twitter" style="position:absolute; top: ' + mouseY + 'px;  left: ' + mouseX + 'px;">';
-								
-								if(obj.parent().css('position') == 'relative')
+								if(obj.parent().hasClass('wrapped-highlight')){
 									obj.append(img);
-								else
-									obj.wrap('<div style="position:relative;"></div>').append(img);
-								
+								}
+								else{
+									obj.wrap('<div style="position:relative;" class="wrapped-highlight"></div>').append(img);
+							    }
 							}
 						}
-						else
+						else{
 							$(document).find('#img-share-twitter').remove();
+						}
 					}
 				});
-
-				$(document).click(function(event) { 
-					if((!$(event.target).closest(obj).length) && (!$(event.target).closest('#img-share-twitter').length)){
-						$(document).find('#img-share-twitter').remove();
-					}        
-				});
-			});
-		}
-	});     
+            });
+        }
+    });     
 })(jQuery);
