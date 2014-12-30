@@ -4,7 +4,9 @@
     "description": "A jQuery plugin that allow to share highlighted text on twitter.",
     "keywords": [
         "highlight",
-        "twitter"
+        "twitter",
+        "share",
+        "social"
     ],
     "version": "0.1.1",
     "author": {

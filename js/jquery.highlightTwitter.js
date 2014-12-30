@@ -8,7 +8,7 @@ V 0.1.1
     $.fn.extend({      
         highlightTwitter: function (argumentOptions) {
             var defaults = {
-				image: "img/twitter.png",
+				image: 'img/twitter.png',
 			}
 			var options = $.extend(defaults, argumentOptions);
 			
@@ -16,6 +16,7 @@ V 0.1.1
                 var o = options;
 				var obj = $(this);
 				var textSend = '';
+				var textCut = '';
 
 				getSelectedText = function(){
 		    		if (window.getSelection) {
@@ -27,7 +28,7 @@ V 0.1.1
 		    	}
 
 				obj.mouseup(function(e) {
-					if(($(event.target).closest('#img-share-twitter').length) && (textSend != '')){
+					if(($(event.target).closest('#img-share-twitter').length) && (textSend !== '')){
 						var textTotal = textSend + window.location.href;
 						if(textTotal.length > 140){
 							textCut = 140 - window.location.href.length;
@@ -35,23 +36,23 @@ V 0.1.1
 						}
 
 						window.open(
-						  "http://twitter.com/share?text=" + textSend + "&url=" + window.location.href,
+						  'http://twitter.com/share?text=' + textSend + '&url=' + window.location.href,
 						  '_blank'
 						);
 					}
 					else{
 						var text = getSelectedText();
-						if (text != ''){
+						if (text !== ''){
 							textSend = text;
 							if($(event.target).closest('#img-share-twitter').length){
-								window.location.href = "http://twitter.com/share?text=" + text + "&url=" + window.location.href;
+								window.location.href = 'http://twitter.com/share?text=' + text + '&url=' + window.location.href;
 							}
 							else{
 								$(document).find('#img-share-twitter').remove();
 
 								var offset = obj.offset();
-								mouseX = Math.min(e.pageX - offset.left - 30);
-								mouseY = Math.min(e.pageY - offset.top - 58);
+								var mouseX = Math.min(e.pageX - offset.left - 30);
+								var mouseY = Math.min(e.pageY - offset.top - 58);
 
 								var img= '<img id="img-share-twitter" src="' + o.image + '" alt="share on twitter" title="Share on Twitter" style="position:absolute; top: ' + mouseY + 'px;  left: ' + mouseX + 'px;">';
 								if(obj.parent().hasClass('wrapped-highlight')){
