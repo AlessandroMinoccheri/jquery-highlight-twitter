@@ -22,6 +22,9 @@
         }
     ],
     "dependencies": {
-        "jquery": ">=1.5"
+        "jquery": ">=1.5",
+        "grunt": "~0.4.1",
+        "grunt-contrib-qunit": "*",
+        "grunt-contrib-connect": "*"
     }
 }
