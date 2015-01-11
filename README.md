@@ -4,6 +4,7 @@ jquery-highlight-twitter
 This jQuery plugin allow to share highlighted text on twitter.
 When you highlight a text with this plugin active on it automatically appear twitter logo to share the highlighted text.
 
+#Result
 ![Example](http://www.alessandrominoccheri.com/wp-content/uploads/2015/01/jquery-highlight-twitter.png)
 
 #Get started
