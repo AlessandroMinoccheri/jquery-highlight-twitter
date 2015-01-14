@@ -28,7 +28,7 @@ V 0.1.1
 		    	}
 
 				obj.mouseup(function(e) {
-					if(($(event.target).closest('#img-share-twitter').length) && (textSend !== '')){
+					if(($(e.target).closest('#img-share-twitter').length) && (textSend !== '')){
 						var textTotal = textSend + window.location.href;
 						if(textTotal.length > 140){
 							textCut = 140 - window.location.href.length;
@@ -44,7 +44,7 @@ V 0.1.1
 						var text = getSelectedText();
 						if (text !== ''){
 							textSend = text;
-							if($(event.target).closest('#img-share-twitter').length){
+							if($(e.target).closest('#img-share-twitter').length){
 								window.location.href = 'http://twitter.com/share?text=' + text + '&url=' + window.location.href;
 							}
 							else{
