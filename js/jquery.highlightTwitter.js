@@ -9,7 +9,12 @@ V 0.1.1
         highlightTwitter: function (argumentOptions) {
             var defaults = {
 				image: 'img/twitter.png',
-			}
+			};
+
+			var otherData = {
+				textSend: ''
+			};
+
 			var options = $.extend(defaults, argumentOptions);
 			
 			return this.each(function () {

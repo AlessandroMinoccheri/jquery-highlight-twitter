@@ -1,11 +1,13 @@
 var QUNIT = true;
 $(document).ready(function(){
-    console.log('startTest');
+
   var testfield = $('.txt');
 
   $('.txt').highlightTwitter({
-    image:"../img/twitter.png"
-  })   
+      image:"../img/twitter.png"
+  });
+  
+  //var pluginData = testfield.data('highlightTwitter');
 
   module('Simple Hihglight');
     test("Text to highlight", function(){
@@ -13,7 +15,10 @@ $(document).ready(function(){
 
         testfield.focus();
         testfield.select(); 
-        testfield.trigger( $.Event( "mouseup") );
+        testfield.trigger($.Event( "mouseup"));
+        //obj.data('highlightTwitter',{defaults: defaults, textToSend{textSend : textSend })
+        //console.log(pluginData.otherData.textSend);
+        //console.log(pluginData);
 
         imgTwitter = $(document).find('#img-share-twitter').length;
 
