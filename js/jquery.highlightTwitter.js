@@ -41,7 +41,7 @@ V 0.1.1
 							textSend = textSend.substring(0, textCut);
 						}
 
-						textSendGlobal = textSend; //here
+						textSendGlobal = textSend;
 
 						window.open(
 						  'http://twitter.com/share?text=' + textSend + '&url=' + window.location.href,
