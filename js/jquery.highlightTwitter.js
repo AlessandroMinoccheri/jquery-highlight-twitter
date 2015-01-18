@@ -5,15 +5,16 @@ V 0.1.1
 */
 
 (function ($) {
+	var textSendGlobal = 'START';
+
     $.fn.extend({      
         highlightTwitter: function (argumentOptions) {
             var defaults = {
 				image: 'img/twitter.png',
 			};
 
-			var otherData = {
-				textSend: ''
-			};
+			//var self = this;
+			//self.textSendToTest = 'OP';
 
 			var options = $.extend(defaults, argumentOptions);
 			
@@ -40,6 +41,8 @@ V 0.1.1
 							textSend = textSend.substring(0, textCut);
 						}
 
+						textSendGlobal = textSend; //here
+
 						window.open(
 						  'http://twitter.com/share?text=' + textSend + '&url=' + window.location.href,
 						  '_blank'
@@ -49,6 +52,7 @@ V 0.1.1
 						var text = getSelectedText();
 						if (text !== ''){
 							textSend = text;
+							textSendGlobal = textSend; 
 							if($(e.target).closest('#img-share-twitter').length){
 								window.location.href = 'http://twitter.com/share?text=' + text + '&url=' + window.location.href;
 							}
@@ -74,6 +78,15 @@ V 0.1.1
 					}
 				});
             });
+
+			//return this;
         }
-    });     
+    });
+
+	$.extend({
+        getTextSend: function() {
+            return textSendGlobal;
+        }
+    })
+
 })(jQuery);
