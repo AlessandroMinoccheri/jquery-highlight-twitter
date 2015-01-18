@@ -25,11 +25,11 @@ $(document).ready(function(){
         testfield.select(); 
         testfield.trigger($.Event( "mouseup"));
 
-        $(document).find('#img-share-twitter').trigger('click');
+        $(document).find('#img-share-twitter').trigger($.Event( "mouseup"));
 
-        console.log($(document).find('#img-share-twitter').length);//trigger('click')
-        //console.log($.getTextSend());
-        console.log($.getN());
+        
+        //var textSend = $.getTextSend();
+        
         equal( "1" , "1");
     });
 });

@@ -78,8 +78,6 @@ V 0.1.1
 					}
 				});
             });
-
-			//return this;
         }
     });
 
@@ -88,5 +86,4 @@ V 0.1.1
             return textSendGlobal;
         }
     })
-
 })(jQuery);
