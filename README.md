@@ -1,4 +1,4 @@
-jquery-highlight-twitter
+jquery-highlight-twitter v.1.0.0
 ========================
 
 This jQuery plugin allow to share highlighted text on twitter.
