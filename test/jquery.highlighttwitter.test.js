@@ -21,16 +21,22 @@ $(document).ready(function(){
     });
 
     test("Click on twitter button", function(){
+        var check = false;
+        var textSend = '';
+
         testfield.focus();
         testfield.select(); 
         testfield.trigger($.Event( "mouseup"));
 
         $(document).find('#img-share-twitter').trigger($.Event( "mouseup"));
 
-        
-        //var textSend = $.getTextSend();
-        
-        equal( "1" , "1");
+        textSend = $.getTextSend();
+            
+        if(textSend.length < 140){
+          check = true;
+        }
+
+        ok(check , true);
     });
 });
 
