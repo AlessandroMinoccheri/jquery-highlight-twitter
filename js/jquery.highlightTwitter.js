@@ -1,6 +1,6 @@
 /*
 Alessandro Minoccheri
-V 0.1.1
+V 1.0.0
 17-05-2014
 */
 
@@ -12,9 +12,6 @@ V 0.1.1
             var defaults = {
 				image: 'img/twitter.png',
 			};
-
-			//var self = this;
-			//self.textSendToTest = 'OP';
 
 			var options = $.extend(defaults, argumentOptions);
 			
@@ -30,6 +27,7 @@ V 0.1.1
 			        } else if (document.selection) {
 			            return document.selection.createRange().text;
 			        }
+
 			        return '';
 		    	}
 
