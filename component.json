@@ -1,0 +1,6 @@
+{
+  "name": "jquery-highlight-twitter",
+  "description": "A jQuery Plugin that allow to share highlighted text on twitter",
+  "version": "1.0.0",
+  "keywords": ["javascript", "jquery", "twitter", "share", "highlight"],
+}
