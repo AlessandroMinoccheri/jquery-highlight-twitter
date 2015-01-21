@@ -1,6 +1,8 @@
 jquery-highlight-twitter v.1.0.0
 ========================
 
+[![Build Status](https://api.travis-ci.org/AlessandroMinoccheri/jquery-highlight-twitter.png)](https://travis-ci.org/AlessandroMinoccheri/jquery-highlight-twitter)
+
 This jQuery plugin allow to share highlighted text on twitter.
 When you highlight a text with this plugin active on it automatically appear twitter logo to share the highlighted text.
 
