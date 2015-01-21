@@ -5,4 +5,4 @@ before_script:
   - npm install -g grunt-cli 
   - npm install grunt
   - npm install
-script: grunt test
+script: grunt test -v -d
