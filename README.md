@@ -22,7 +22,7 @@ and with jQuery call the plugin on this element (inside $(document).ready() func
 $('#text-highlighted').highlightTwitter();
 ```  
 
-With this call every time you highlight the text inside the element, will appear the image of twitter and if user click on it you can share highlighted text.
+With this call every time you highlight the text inside the element, will appear the image of twitter and if the user click on it he can share highlighted text.
 
 If the container of your element isn't in position:relative automatically the plugin wrap the element on a div with position:relative to position well the image of twitter.
 
